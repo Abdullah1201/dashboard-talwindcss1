@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="min-h-screen bg-gray-100">
+    <!-- navbar -->
+   <div class="h-16 fixed shadow-sm bg-white pl-8 lg:pl-80 pr-8 w-full top-0 left-0 flex items-center justify-between">
+    <div class="relative hidden lg:block">
+        <ion-icon name="search-outline" class="absolute left-3 top-3  text-base text-gray-400"></ion-icon>
+        <input type="text" class="w-72  shadow border-none rounded-3xl focus:outline-none py-2 bg-gray-100 text-gray-600 pl-11 pr-2">
+    </div>
+    <div class="cursor-pointer lg:hidden" id="menuIcon">
+        <ion-icon name="menu-outline" class="text-3xl"></ion-icon>
+    </div>
+    <div class=" items-center hidden lg:flex ">
+        <div>
+            <ion-icon name="notifications-outline" class="text-xl cursor-pointer text-gray-400 hover:text-gray-600 mr-4"></ion-icon>
+        </div>
+        <div class="relative ">
+            <div>
+                <img id="dropdown" class="h-8 w-8 rounded-full object-cover" src="https://ui-avatars.com/api/?name=Elon+Musk" alt="">
+            </div>
+            <div class=" hidden absolute z-50 rounded-md mt-2 shadow-lg w-48 right-0 py-1 bg-white" id="dropdownContent">
+                <div class="px-4 py-2 text-gray-400 text-sm ">Manage Account</div>
+                <a href="#" class="block px-4 py-2 text-xs leading-5 text-gray-700 hover:text-gray-300">Profile</a>
+                <a href="#" class="block px-4 py-2 text-xs leading-5 text-gray-700 hover:text-gray-300">Log In</a>
+            </div>
+        </div>
+    </div>
+   </div>
+     <!-- navbar end-->
+
+     <!-- sidebar -->
+     <div class="fixed top-0 left-0 w-72 h-full bg-gray-900 shadow-md z-10 flex flex-col " id="sidebar">
+        <div class="font-bold text-white text-base uppercase py-5 text-center bg-gray-700 -tracking-wider relative ">Laravel
+            <div id="sidebarClose">
+            <ion-icon name="close-outline" class="absolute block lg:hidden text-3xl right-3 top-5 cursor-pointer hover:text-gray-900" ></ion-icon>
+        </div>
+        </div>
+
+      <div class="flex flex-col justify-between flex-grow">
+        <div class="py-5">
+            <a href="#" class="flex items-center my-1 px-4 py-3 border-l-4 border-blue-600 bg-gray-700 text-white">
+                <ion-icon name="home-outline" class="text-xl mr-3"></ion-icon>Dashboard</a>
+                <a href="#" class="flex items-center my-1 px-4 py-3 border-l-4 border-transparent hover:border-blue-600 hover:bg-gray-700 text-white">
+                    <ion-icon name="menu-outline" class="text-xl mr-3"></ion-icon>Catagory</a>
+                    <a href="#" class="flex items-center my-1 px-4 py-3 border-l-4 border-transparent hover:border-blue-600 hover:bg-gray-700 text-white">
+                        <ion-icon name="bag-add-outline" class="text-xl mr-3"></ion-icon>Product</a>
+
+                        <a href="#" class="flex items-center my-1 px-4 py-3 border-l-4 border-transparent hover:border-blue-600 hover:bg-gray-700 text-white">
+                            <ion-icon name="person-circle-outline" class="text-xl mr-3"></ion-icon>User</a>
+
+                            <a href="#" class="flex lg:hidden items-center my-1 px-4 py-3 border-l-4 border-transparent hover:border-blue-600 hover:bg-gray-700 text-white">
+                                <ion-icon name="log-out-outline" class="text-xl mr-3"></ion-icon>Log Out</a>
+        </div>
+        <div class="lg:hidden block">
+            <div class="relative mx-5 mb-5">
+                <ion-icon name="search-outline" class="absolute left-3 top-3  text-base text-gray-400"></ion-icon>
+                <input type="text" class="w-full  shadow border-none rounded-3xl focus:outline-none py-2 bg-gray-700 text-gray-100 pl-11 pr-2" placeholder="Search">
+            </div>
+            <div class="border-t border-gray-600 flex items-center px-5 py-4">
+                <div class="cursor-pointer mr-4">
+                    <img class="h-8 w-8 rounded-full object-cover" src="https://ui-avatars.com/api/?name=Elon+Musk" alt="">
+                </div>
+                <a href="#" class="text-gray-200 text-md">Rasel Ahmed</a>
+                <div class="ml-auto cursor-pointer">
+                    <ion-icon name="notifications-outline" class="text-xl cursor-pointer text-gray-400 hover:text-gray-600 mr-4"></ion-icon>
+                </div>
+            </div>
+        </div>
+      </div>
+     </div>
+        <!-- sidebar end-->
+
+        <div class="pt-24 pr-8 pl-8 lg:pl-80">
+            <h1 class="text-3xl text-gray-700 font-bold">Welcome to Dashboord</h1>
+        </div>
+  </div>
+
+  <script>
+    document.getElementById('dropdown').addEventListener('click', function(){
+        document.getElementById('dropdownContent').classList.toggle('hidden')
+    })
+    
+    document.getElementById('menuIcon').addEventListener('click', function(){
+        document.getElementById('sidebar').classList.add('active')
+    })
+
+    document.getElementById('sidebarClose').addEventListener('click', function(){
+        document.getElementById('sidebar').classList.remove('active')
+    })
+  </script>
+
+  <!-- icon cdn -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
